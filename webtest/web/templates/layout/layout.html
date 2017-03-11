@@ -1,0 +1,128 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Ly'space</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<link rel="stylesheet" href="/static/assets/css/common.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
+		{% block css %}
+					
+		{% endblock %}
+	</head>
+	<body style="backgroud-color:green">
+
+		<!-- Header -->
+			<header id="header" >
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="/static/images/avater.png" alt="self" /></a>
+					<h1><strong>I am Ly</strong>, a common boy.<br />
+					Try to be a better person .<br />
+					</h1>
+				</div>
+				<div class="navbar" id="nav-header">
+					<ul class="nav">
+						<li class=""><a href="/index/">首页</a></li>
+						<li class="menu" onmouseover="show_menu(this);" onmouseout="hide_menu(this)">
+							<a href="/index_type/0/">生活笔记<i class="triangle down"></i></a>
+							<div class="hide" style="position:relative;">
+                            <ul class="sub-menu-1">
+                                <li><a href="/index_type/1/"  title="个人随笔" rel="nofollow">个人随笔</a></li>
+                                <li><a href="/index_type/2/"  title="个人展示" rel="nofollow">个人展示</a></li>
+                            </ul>
+                        	</div>
+						</li>
+						<li class="menu" onmouseover="show_menu(this);" onmouseout="hide_menu(this)">
+							<a href="/index_type/6/">Python之路<i class="triangle down"></i></a>
+							<div class="hide" style="position:relative;">
+                            <ul class="sub-menu-2">
+                                <li><a href="/index_type/3/" href="#" title="Python之Web" rel="nofollow">Python之Web</a></li>
+                                <li><a href="/index_type/4/" href="#" title="Python之爬虫" rel="nofollow">Python之爬虫</a></li>
+                                <li><a href="/index_type/5/" href="#" title="Python之数据" rel="nofollow">Python之数据<</a></li>
+                            </ul>
+                        	</div>
+						</li>
+						
+						<li class=""><a href="/contact/">给我留言</a></li>
+						<li class=""><a href="/about/">关于本站</a></li>
+					</ul>
+                </div>
+
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+					<div id="beforlogin"class="speedbar"style="margin-top:-60px">
+						<div class="pull-right" style="margin-top:-6px">
+							<i class="fa fa-user"></i> 
+							<a href="/write/">上传</a>&nbsp;&nbsp;&nbsp;   
+							<i class="fa fa-power-off"></i> 
+							<a href="/login/">登录</a>			
+						</div>
+						<div class="toptip" style="margin-top:-6px">
+							<strong class="text-success">
+								<i class="fa fa-volume-up"></i> 
+							</strong> &nbsp; 
+								您好，欢迎光临Ly的博客！
+						</div>
+					</div>
+				<!-- One -->
+				
+					
+					{% block body %}
+					
+					{% endblock %}
+					
+			</div>
+			
+			<div style="display:none";>
+				<a id="scrollSearchDiv" href="#top" style="display: block; position: fixed; z-index: 2147483647;">
+					<i class="fa fa-angle-up"></i>
+				</a>	
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" style="margin-bottom:16px">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+		
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.poptrox.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/static/assets/js/main.js"></script>
+			<script type="text/javascript">
+
+			function show_menu(arg) {
+		        
+		        $(arg).find(".hide").addClass("show").removeClass("hide");
+		    }
+		    function hide_menu(arg) {
+		        
+		        $(arg).find(".show").addClass("hide").removeClass("show");
+		    }
+
+			</script>
+			{% block js %}
+			
+			{% endblock %}
+
+	</body>
+</html>

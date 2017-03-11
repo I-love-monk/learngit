@@ -1,0 +1,365 @@
+{% extends "layout/layout.html" %}
+
+<!-- 我是分割线------------------------------------------------------------------ -->
+
+{% block css %}
+<style>
+/*media all*/
+.article-social {
+    margin-bottom: 30px;
+    padding-top: 40px;
+    text-align: center;
+    text-indent: 0px;
+}
+/*media all*/
+#Addlike {
+    background-color: #f78585;
+    color: #fff;
+}
+/*media all*/
+.article-social a {
+    border-bottom: 1px solid #d6d6d6;
+    text-indent: 0px;
+}
+/*media all*/
+.article-social a {
+    border-bottom: 1px solid #d6d6d6;
+    text-indent: 0px;
+}
+/*media all*/
+.action {
+    position: relative;
+    padding: 8px 40px;
+    display: inline-block;
+    border: 1px solid #d6d6d6;
+    border-radius: 2px;
+    background-color: #5fcec0;
+    font-size: 15px;
+    margin: 0 3px;
+    color: #fff;
+}
+/*media all*/
+.fenye a span, button.btn, .action, .social a, .article-content a.dl {
+    transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -webkit-transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+/*media all*/
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+/*media all*/
+.artical_container {
+    margin-bottom: 10px;
+}
+/*media all*/
+.artical_container {
+    max-width: 1226px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    *zoom:1: ;
+}
+
+/*media all*/
+.article-content {
+    font-size: 15px;
+    line-height: 26px;
+    text-indent: 30px;
+    word-break: break-all;
+    word-wrap: break-word;
+    position: relative;
+    padding: 10px 20px 20px 20px;
+    background-color: #fff;
+}
+/*media all*/
+.article-content p {
+    margin: 0 0 0 0;
+}
+
+/*media all*/
+.fenye {
+    text-indent: 0px;
+    text-align: center;
+    margin: 20px auto 10px;
+    font-weight: bold;
+}
+
+#code{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    float: left;
+    font-size: 12px !important;
+    line-height: 15px !important;
+    height: auto;
+}
+
+.crayon-theme-github {
+    margin-bottom: 25px !important;
+    border: 1px solid #dedede !important;
+    background-color: #f8f8ff !important;
+    font-size: 100% !important;
+    line-height: 130% !important;
+}
+
+.crayon-syntax {
+    font-family: Monaco,"MonacoRegular","Courier New",monospace;
+    font-weight: 500;
+}
+
+.crayon-syntax, .crayon-syntax .crayon-main, .crayon-syntax .crayon-plain, .crayon-syntax .crayon-table {
+    padding: 0;
+    margin: 0;
+}
+
+.crayon-syntax, .crayon-syntax .crayon-main, .crayon-syntax .crayon-toolbar, .crayon-syntax .crayon-info, .crayon-syntax .crayon-plain, .crayon-syntax .crayon-code {
+    width: 100%;
+}
+
+.crayon-syntax {
+    overflow: hidden !important;
+    position: relative !important;
+    direction: ltr;
+    text-align: left;
+    box-sizing: border-box;
+    direction: ltr !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+}
+#ds-thread #ds-reset .ds-post-toolbar {
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.6);
+}
+#ds-reset div, #ds-related-reads div, #ds-reset ul, #ds-related-reads ul, #ds-reset ol, #ds-related-reads ol, #ds-reset li, #ds-related-reads li, #ds-reset ul li, #ds-related-reads ul li, #ds-reset ol li, #ds-related-reads ol li, #ds-reset iframe, #ds-related-reads iframe, #ds-reset h1, #ds-related-reads h1, #ds-reset h2, #ds-related-reads h2, #ds-reset h3, #ds-related-reads h3, #ds-reset h4, #ds-related-reads h4, #ds-reset h5, #ds-related-reads h5, #ds-reset h6, #ds-related-reads h6, #ds-reset p, #ds-related-reads p, #ds-reset img, #ds-related-reads img, #ds-reset blockquote, #ds-related-reads blockquote, #ds-reset a, #ds-related-reads a, #ds-reset span, #ds-related-reads span, #ds-reset pre, #ds-related-reads pre, #ds-reset code, #ds-related-reads code, #ds-reset strong, #ds-related-reads strong, #ds-reset sub, #ds-related-reads sub, #ds-reset sup, #ds-related-reads sup, #ds-reset fieldset, #ds-related-reads fieldset, #ds-reset form, #ds-related-reads form, #ds-reset label, #ds-related-reads label, #ds-reset input, #ds-related-reads input, #ds-reset textarea, #ds-related-reads textarea, #ds-reset header, #ds-related-reads header, #ds-reset section, #ds-related-reads section, #ds-reset article, #ds-related-reads article, #ds-reset select, #ds-related-reads select {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    font: inherit;
+    line-height: inherit;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none;
+    overflow: visible;
+    transition: none;
+ 
+}
+#ds-reset *, #ds-related-reads * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#ds-thread #ds-reset .ds-post-options {
+    border: medium none;
+    background: none repeat scroll 0% 0% rgba(237, 237, 237, 1);
+    border-radius: 0px;
+}
+#ds-thread #ds-reset .ds-post-options {
+    position: relative;
+    margin-right: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-bottom-color: #aaa;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+}
+.hide{
+	display:none;
+}	
+#beforlogin{
+	display:none
+}
+</style>
+
+{% endblock %}
+
+
+{% block body%}
+
+	<div id="login" class="speedbar"style="margin-top:-60px">
+		<div class="pull-right" style="margin-top:-6px">
+			<i class="fa fa-user"></i><a href="#" id='user'></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+			<a class="HomeEntry-post js-HomeEntry-post" href="/write/" target="_blank">
+				<i class="sprite-home-post-off"></i>
+				写文章
+			</a>
+			
+			<div id="userinfo"class="usermenu" style="left: 159px; top: 22px; " style="display:none">
+				<div class="bdnuarrow"></div>
+				<a onmousedown="return user_c({'fm':'set','tab':'uc_center'})" href="">个人中心</a>
+				<a name="tj_user" href="">帐号设置</a>
+				<a class="set-feedback" href="javascript:;">意见反馈</a>
+				<a name="tj_logout" class="logout" onmousedown="return user_c({'fm':'set','tab':'logout'})" href="">退出</a>
+			</div>			
+		</div>
+	</div>
+
+
+	
+
+<section class="artical_container">
+	<div class="article">
+		<header class="article-header">
+			<h1 class="article-title"><a href="{{content.url}}">{{content.title}}</a></h1>
+			<div class="meta">
+				<span class="muted" id="mute-category"><i class="fa fa-list-alt"></i><a href="article/{{content.contenttype}}">{{content.contenttype.typename}}</a></span>				
+				<span class="muted"><i class="fa fa-user"></i> <a href="#">{{content.content_auth}}</a></span>
+				<time class="muted"><i class="fa fa-clock-o"></i> {{content.create_date}}</time>
+				<span class="muted"><i class="fa fa-eye"></i> {{content.click_count}}</span>
+				<span class="muted"><i class="fa fa-comments-o"></i> <a href="{{content.url}}#comments">{{content.comment_count}}</a></span>							</div>
+		</header>
+		
+		<article class="article-content">
+			<div >
+				{{article}}
+			</div>
+		</article>
+		
+		
+		
+		<div class="fenye">
+		
+		</div>
+		
+		<div class="article-social">
+			<a style="cursor:pointer" class="action" id="Addlike" onclick="Favor(this,{{content.id}});" >
+				<i class="fa fa-heart-o"></i>喜欢 
+				(<span id="count">{{content.favor_count}}</span>)
+				</a>
+			<span class="or">or</span>
+			<span class="action action-share bdsharebuttonbox bdshare-button-style0-24" >
+				<i class="fa fa-share-alt"></i> 
+				<a href="#comment">评论</a> 
+				(<span  class="bds_count" data-cmd="count">{{content.comment_count}}</span>)
+				<div class="action-popover">
+					<div class="popover top in">
+						<div class="arrow"></div>
+						<div class="popover-content" style="display:none">
+							<a title="" class="sinaweibo fa fa-weibo" href="#" data-cmd="tsina" data-original-title="分享到新浪微博"></a>
+							<a title="" class="bds_qzone fa fa-star" href="#" data-cmd="qzone" data-original-title="分享到QQ空间"></a>
+							<a title="" class="tencentweibo fa fa-tencent-weibo" href="#" data-cmd="tqq" data-original-title="分享到腾讯微博"></a>
+							<a title="" class="qq fa fa-qq" href="#" data-cmd="sqq" data-original-title="分享到QQ好友"></a><a title="" class="bds_renren fa fa-renren" href="#" data-cmd="renren" data-original-title="分享到人人网"></a>
+							<a title="" class="bds_weixin fa fa-weixin" href="#" data-cmd="weixin" data-original-title="分享到微信"></a>
+							<a title="" class="bds_more fa fa-ellipsis-h" href="#" data-cmd="more" data-original-title=""></a>
+						</div>
+					</div>
+				</div>
+			</span>	
+		</div>
+<!-- 后续添加功能 
+		<footer class="article-footer">
+			<div class="article-tags">
+			<i class="fa fa-tags"></i>
+			<a title="" href="" rel="tag" data-original-title=""></a>
+			</div>		
+			</footer>
+		<nav class="article-nav">
+			<span class="article-nav-prev"><i class="fa fa-angle-double-left"></i> 
+			<a href="http://cuiqingcai.com/4020.html" rel="prev"></a></span>
+			<span class="article-nav-next"></span>
+		</nav> 
+-->
+	</div>
+
+
+
+	<div id="comment">
+	{% for i in comment %}
+		<ul>
+			
+				<li class="ds-post" data-post-id="{{i.comment_user.id}}">
+					<div class="ds-post-self" >
+						
+						<div class="ds-comment-body">
+							<div class="ds-comment-header">
+								<span class="ds-user-name" data-user-id="{{i.comment_user.id}}" >{{i.comment_user.username}}</span>
+							</div>
+							<p>{{i.comment_content}}</p>
+							<div class="ds-comment-footer ds-comment-actions">
+								<span title="{{i.create_date}}" class="ds-time" datetime="{{i.create_date}}">{{i.create_date}}</span>
+							&nbsp;&nbsp;&nbsp;
+								<a class="ds-post-likes"  onclick="Addfavor(this,{{i.id}})" style="cursor:pointer">
+									顶<span class="ds-icon ds-icon-like">{{i.comment_favor}}</span>
+								</a>
+					
+							</div>
+						</div>
+					</div>
+				</li>
+			
+		</ul>
+		{% endfor %}
+	</div>
+</section>
+<div class="ds-replybox">
+	<a class="ds-avatar" onclick="return false" >
+	<img alt="" src=""></a>
+	<form method="POST" action="/comment/">
+		<input name="content_id" value="{{content.id}}" type="text" style="display:none"/>
+		<div class="ds-textarea-wrapper ds-rounded-top">
+			<textarea id="comment" name="comment_content"  placeholder="说点什么吧…" style="resize:none;"></textarea>
+			<pre class="ds-hidden-text"></pre>
+		</div>
+		<div class="ds-post-toolbar">
+			<div class="ds-post-options ds-gradient-bg">
+			<span class="ds-sync"></span>
+			</div>
+		<button class="ds-post-button" type="submit" >发布</button>
+		
+		</div>
+	</form>
+</div>
+{% endblock%}
+
+
+{% block js %}
+<script type="text/javascript">
+
+
+
+
+function Addfavor(doc,id){
+	$.ajax({
+		url:'/addfavor__/',
+		data:{id:id},
+		type:'POST',
+		success:function(callback){
+			var obj=jQuery.parseJSON(callback);
+			if(obj.status==1){
+				$(doc).children().text(obj.count);
+			}else{
+				alert(obj.message);
+			}
+		}
+	});
+}
+function Favor(doc,id){
+	$.ajax({
+		url:'/addfavor/',
+		data:{id:id},
+		type:'POST',
+		success:function(callback){
+			var obj=jQuery.parseJSON(callback);
+			if(obj.status==1){
+				$("#count").text(obj.count);
+				//alert(obj.count);
+			}else{
+				alert(obj.message);
+			}
+		
+		}
+	});
+}
+
+
+</script>	
+
+
+{% endblock %}

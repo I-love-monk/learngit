@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>write some</title>
+    <link href="/static/assets/css/commons.css" rel="stylesheet" />
+    <link href="/static/assets/css/pg-header.css" rel="stylesheet" />
+    <link href="/static/assets/css/account.css" rel="stylesheet" />
+    
+    
+    
+    
+</head>
+<body>
+
+    <div class="pg-header">
+        <div class="header-top">
+            <div class="account-container bg">
+                <ul class="top-left">
+                    <li>*<a>收藏本站</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+ <form id='Form' method='POST' action='/write/'>
+	<div class="pg-body">
+		<div class='account-container'>
+			<div class='header clearfix'>
+	            <div>
+	                <a href="/index/">
+	                    <img src="/static/images/logo.png">
+	                </a>
+	            </div>
+	        </div>
+	        <div class='body clearfix'>
+	            <div class='register left' style="width:400px">
+	                <div>
+	                    <h1 class='mb20'>Write Some</h1>{{message}}
+	                   
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>作者：</label>
+	                        	<input type='text' require='true' label='作者' Field='string' range='4-40' name='content_auth' />
+	                        	<i class='i-auth'></i>
+	                        	
+	                        </div>
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>标题：</label>
+	                        	<input  type='text' require='true' label='标题' title='true' name='title' />
+	                        	<i class='i-title'></i>
+	                        </div>
+	                        <!-- 
+	                        <div class='group'>
+	                        	<label class='tip'><span class="red">*</span>图片：</label>
+	                        	<input  type='file'  name='image' enctype="multipart/form-data"/>
+	                        	<i class='i-pwd'></i>
+	                        </div>
+	                        -->
+	                        <div class='group'>
+	                        <label class='tip'>&nbsp;<span class="red">*</span>
+	                        	文档类型：</label>
+	                        	<select name="contenttype">
+	                        		<optgroup label="生活随笔">
+	                        			<option value="1">个人随笔</option>
+	                        			<option value="2">个人展示</option>
+	                        		</optgroup>
+	                        		<optgroup label="Python之路">
+	                        			<option value="3">Python之Web</option>
+	                        			<option value="4">Python之爬虫</option>
+	                        			<option value="5">Python之数据</option>
+	                        		</optgroup>
+	                        	</select>
+	                        </div>
+	                        
+	                        
+	                        <div class='group'>
+	                        	<label class='tip'></label>
+	                        	<input type='submit' class='submit' value='发布' />
+	                        </div>
+	                    
+	                </div>
+	            </div>
+	            <div class='more left'>
+	            	<div class='mg10 font16'>
+	            	<span class="red">*</span>以下为正文，若加code请放于pre标签中</div>
+		            	<div class='tip'>
+						<textarea rows="16px" cols="68px" id="content" name="content" placeholder="说点什么吧…"></textarea>
+						</div>
+						
+	            	
+	            </div>
+	        </div>
+		
+		</div>
+	</div>
+	</form>	
+	<div class="pg-footer">
+		<div class='account-container' style='text-align:center;'>
+			© 2017-2018 www.autohome.com.cn All Rights Reserved. Ly'space 版权所有
+		</div>
+	</div>
+	
+	<script src="/static/assets/js/jquery.min.js"></script>
+	<script src="/static/assets/js/jquery.poptrox.min.js"></script>
+	<script src="/static/assets/js/skel.min.js"></script>
+	<script src="/static/assets/js/util.js"></script>
+    <script type="text/javascript">
+    	function show_menu(arg) {
+	        $(arg).find(".down").addClass("up").removeClass("down");
+	        $(arg).find(".hide").addClass("show").removeClass("hide");
+	    }
+	    function hide_menu(arg) {
+	        $(arg).find(".up").addClass("down").removeClass("up");
+	        $(arg).find(".show").addClass("hide").removeClass("show");
+	    }
+	    function ChangeCode() {
+            var code = document.getElementById('imgCode');
+            code.src += '?';
+        }
+	    (function(){
+	    	var username = $.cookie("username");
+	    	if(username){
+	    		$("#login").removeClass("hide")
+	    		$("#beforlogin").addClass("hide")
+	    	}else{
+	    		$("#beforlogin").removeClass("hide")
+	    		$("#login").addClass("hide")
+	    	}
+	    })()
+    </script>
+</body>
+</html>

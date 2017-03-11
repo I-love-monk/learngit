@@ -1,0 +1,330 @@
+{% extends "layout/layout.html" %}
+
+<!-- 我是分割线------------------------------------------------------------------ -->
+
+{% block css %}
+<style>
+/*media all*/
+.excerpt::after {
+    clear: both;
+}
+/*media all*/
+.excerpt::before, .excerpt::after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+/*media all*/
+.excerpt {
+    background-color: #fff;
+    padding: 20px 15px 30px 20px;
+    margin-bottom: 10px;
+    position: relative;
+    *zoom:1: ;
+    clear: both;
+}
+/*media all*/
+::selection {
+    background: #72d0eb;
+    color: #fff;
+    text-shadow: none;
+}
+/*media all*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+/*media all*/
+.excerpt header {
+    margin: 0 10px 15px 0;
+}
+
+/*media all*/
+.excerpt header .label {
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+    padding: 2px 6px 4px;
+}
+
+/*media all*/
+.label-important, .badge-important {
+    background-color: #d9534f;
+}
+/*media all*/
+.label, .badge {
+    position: relative;
+    display: inline-block;
+    padding: 4px 6px 3px;
+    line-height: 14px;
+    color: #fff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background-color: #999;
+}
+
+/*media all*/
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+/*media all*/
+.excerpt h2 {
+    display: inline;
+    font-size: 20px;
+    margin: 0;
+    font-weight: normal;
+    position: relative;
+    top: 1px;
+    line-height: 25px;
+    margin-left: 10px;
+}
+/*media all*/
+h1, h2, h3, h4, h5 {
+    margin: 5px 0;
+    font-weight: blod;
+    line-height: 35px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+/*media all*/
+.excerpt .focus {
+    float: left;
+    margin: 0 20px 0 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: table;
+}
+/*media all*/
+.excerpt .focus a {
+    display: table-cell;
+    vertical-align: middle;
+}
+/*media all*/
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+/*media all*/
+.excerpt .note {
+    color: #777;
+    line-height: 24px;
+    margin-bottom: 0px;
+    font-style: normal;
+}
+/*media all*/
+.excerpt p.auth-span {
+    float: right;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+/*media all*/
+p {
+    margin: 0 0 10px;
+}
+/*media all*/
+.excerpt .muted {
+    font-size: 13px;
+}
+/*media all*/
+.excerpt .muted, .article-header .muted, .article-header .cate {
+    margin-right: 20px;
+}
+/*media all*/
+.muted {
+    color: #999;
+}
+/*media all*/
+.fa {
+    width: 16px;
+    font-size: 1.23em;
+    text-align: center;
+}
+/*media all*/
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*media all*/
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+
+#page_list {
+    display: inline-block;
+    padding-left: 0px;
+    margin: 20px 0;
+    border-radius: 4px;
+
+}
+#ds-thread #ds-reset .ds-post-self {
+    position: relative;
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.7);
+}
+#ds-reset div, #ds-related-reads div, #ds-reset ul, #ds-related-reads ul, #ds-reset ol, #ds-related-reads ol, #ds-reset li, #ds-related-reads li, #ds-reset ul li, #ds-related-reads ul li, #ds-reset ol li, #ds-related-reads ol li, #ds-reset iframe, #ds-related-reads iframe, #ds-reset h1, #ds-related-reads h1, #ds-reset h2, #ds-related-reads h2, #ds-reset h3, #ds-related-reads h3, #ds-reset h4, #ds-related-reads h4, #ds-reset h5, #ds-related-reads h5, #ds-reset h6, #ds-related-reads h6, #ds-reset p, #ds-related-reads p, #ds-reset img, #ds-related-reads img, #ds-reset blockquote, #ds-related-reads blockquote, #ds-reset a, #ds-related-reads a, #ds-reset span, #ds-related-reads span, #ds-reset pre, #ds-related-reads pre, #ds-reset code, #ds-related-reads code, #ds-reset strong, #ds-related-reads strong, #ds-reset sub, #ds-related-reads sub, #ds-reset sup, #ds-related-reads sup, #ds-reset fieldset, #ds-related-reads fieldset, #ds-reset form, #ds-related-reads form, #ds-reset label, #ds-related-reads label, #ds-reset input, #ds-related-reads input, #ds-reset textarea, #ds-related-reads textarea, #ds-reset header, #ds-related-reads header, #ds-reset section, #ds-related-reads section, #ds-reset article, #ds-related-reads article, #ds-reset select, #ds-related-reads select {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    font: inherit;
+    line-height: inherit;
+    background: none;
+    width: auto;
+    height: auto;
+    float: none;
+    overflow: visible;
+    transition: none;
+}
+#ds-reset *, #ds-related-reads * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+#ds-reset .ds-avatar {
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.75);
+    position: relative;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    float: left;
+}
+#ds-reset .ds-avatar img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    max-width: none;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.22);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+#ds-thread #ds-reset .ds-comment-body {
+    padding-left: 60px;
+}
+#ds-thread #ds-reset .ds-comment-header {
+    padding-top: 1px;
+}
+#ds-reset p, #ds-related-reads p {
+    text-indent: 0px;
+    clear: none;
+}
+#beforlogin{
+	display:none
+}
+
+.fenye {
+    text-indent: 0px;
+    text-align: center;
+    margin: 20px auto 10px;
+    font-weight: bold;
+    font-size:16px;
+}
+.hide{
+	display:none;
+}
+</style>
+
+{% endblock %}
+
+<!-- 我是分割线------------------------------------------------------------------ -->s
+
+{% block body %}
+	<div id="login" class="speedbar"style="margin-top:-60px">
+		<div class="pull-right" style="margin-top:-6px">
+			<i class="fa fa-user"></i><a href="#" id='user'></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+			<a class="HomeEntry-post js-HomeEntry-post" href="/write/" target="_blank">
+				<i class="sprite-home-post-off"></i>
+				写文章
+			</a>
+			
+			<div id="userinfo"class="usermenu" style="left: 159px; top: 22px; " style="display:none">
+				<div class="bdnuarrow"></div>
+				<a onmousedown="return user_c({'fm':'set','tab':'uc_center'})" href="">个人中心</a>
+				<a name="tj_user" href="">帐号设置</a>
+				<a class="set-feedback" href="javascript:;">意见反馈</a>
+				<a name="tj_logout" class="logout" onmousedown="return user_c({'fm':'set','tab':'logout'})" href="">退出</a>
+			</div>			
+		</div>
+	</div>
+
+
+{% for item in data %}
+<article class="excerpt" >
+	<header>
+		<a class="label label-important" href="/index_type/{{item.contenttype.id}}">{{item.contenttype.typename}}
+			<i class="label-arrow"></i>
+		</a>
+		<h2>
+			<a title="{{item.title}}"  href="/getarticle/{{item.id}}" >{{item.title}}</a>
+		</h2>
+	</header>
+	<div class="focus">
+		<a style="cursor:pointer" target="_blank" href="/getarticle/{{item.id}}"><img class="thumb" alt="image" src="{{item.image}}" ></a>
+	</div>
+	<span class="note" > {{ item.content|slice:"66" }}...</span>
+	<p class="auth-span">
+		<span class="muted">
+			<i class="fa fa-user"></i> 
+			<a href="{{item.content_auth}}">{{item.content_auth}}</a>
+		</span>
+		<span class="muted">
+			<i class="fa fa-clock-o"></i> {{item.create_date}}
+		</span>	
+		<span class="muted">
+			<i class="fa fa-eye"></i> {{item.click_count}}
+		</span>	
+		<span class="muted">
+			<i class="fa fa-comments-o"></i> 
+			<a href="/getarticle/{{item.id}}#comment" target="_blank">{{item.comment_count}}评论</a>
+		</span>
+		<span class="muted">
+			<i class="fa fa-heart-o"></i>
+			<a style="cursor:pointer;" onclick="Favor(this,{{item.id}});">{{item.favor_count}}喜欢</a>
+		</span>
+	</p>
+	
+	
+</article>
+{% endfor %}
+<label class="fenye" > {{page_list}} </label>
+
+
+{% endblock %}
+
+<!-- 我是分割线------------------------------------------------------------------ -->
+
+{% block js %}
+
+<script type="text/javascript">
+
+
+	function Favor(doc,id){
+		$.ajax({
+			url:'/addfavor/',
+			data:{id:id},
+			type:'POST',
+			success:function(callback){
+				var obj=jQuery.parseJSON(callback);
+				if(obj.status==1){
+					var temp = obj.count+'喜欢';
+					$(doc).text(temp);
+				}else{
+					alert(obj.message);
+				}
+			
+			}
+		});
+	}
+
+</script>	
+
+{% endblock %}

@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+
+
+
+li {
+    line-height: 25px;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/*media all*/
+.navbar .nav li a:focus, .navbar .nav li a:hover {
+    background-color: #808080;
+    color: #fff;
+}
+
+li a{
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 20px;
+	color: #dac8cb;
+	overflow-x: hidden;
+	text-decoration: none;
+}
+/*media all*/
+::selection {
+    background: #72d0eb;
+    color: #fff;
+    text-shadow: none;
+}
+.hide-1,.hide-2,.hide{
+	display:none
+}
+
+
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+
+
+
+h1, h2, h3, h4, h5 {
+    margin: 5px 0;
+    font-weight: blod;
+    line-height: 35px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+.content-container {
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+/*media all*/
+.btn {
+    display: inline-block;
+    *display:inline: ;
+    *zoom:1: ;
+    padding: 6px 12px 4px;
+    margin-bottom: 0px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*media all*/
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*media all*/
+.rollto .btn {
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+.comment_hide{
+	display: none;
+}
+
+#scrollUp {
+    background-color: #777;
+    color: #eee;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    bottom: 20px;
+    right: 20px;
+    overflow: hidden;
+    width: 46px;
+    height: 46px;
+    border: none;
+    opacity: 0.8;
+}
+
+/*media all*/
+.speedbar {
+    clear: both;
+    color: #666;
+    background-color: #fbfbfb;
+    padding: 8px 20px 18px;
+    line-height: 25px;
+    *zoom:1: ;
+    overflow: hidden;
+    height: 14px;
+    margin-bottom: 10px;
+}
+/*media all*/
+.pull-right {
+    float: right;
+}
+/*media all*/
+.speedbar i {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+/*media all*/
+a {
+    color: #00a67c;
+    text-decoration: none;
+}
+
+
+
+
+
